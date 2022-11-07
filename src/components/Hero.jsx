@@ -22,7 +22,7 @@ export default function CallToActionWithIllustration() {
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
         >
-          Meeting scheduling{" "}
+          블랙핑크 인유어 에리아{" "}
           <Text as={"span"} color={"orange.400"}>
             made easy
           </Text>
