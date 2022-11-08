@@ -1,5 +1,4 @@
 import {
-  Container,
   SimpleGrid,
   Image,
   Flex,
