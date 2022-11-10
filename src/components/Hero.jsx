@@ -8,10 +8,13 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
+
 import lockedImage from "@assets/locked.png";
-export default function CallToActionWithIllustration() {
+import { forwardRef } from "react";
+
+const Hero = forwardRef((props, ref) => {
   return (
-    <Container maxW={"5xl"}>
+    <Container maxW={"5xl"} ref={ref}>
       <Stack
         textAlign={"center"}
         align={"center"}
@@ -33,7 +36,7 @@ export default function CallToActionWithIllustration() {
           </Text>
           아주세요
         </Heading>
-        <Text maxW={"3xl"} lineHeight={"180%"}>
+        <Text maxW={"2xl"} lineHeight={"180%"}>
           당신의 비밀을 영원히 안전하게 보관해 주는 서비스 비담입니다.
           <br />
           블록체인 기술을 활용해 당신의 비밀을 어느 누구도 확인할 수 없습니다.
@@ -47,7 +50,7 @@ export default function CallToActionWithIllustration() {
             rounded={"full"}
             px={6}
             bg={"purple.400"}
-            _hover={{ bg: "purple.700" }}
+            _hover={{ bg: "purple.600" }}
           >
             비담 시작하기
           </Button>
@@ -58,15 +61,17 @@ export default function CallToActionWithIllustration() {
         <Flex w={"full"} align={"center"} justify={"center"} pos={"relative"}>
           <Image src={lockedImage} height={"80px"}></Image>
           <Box
-            w={"80px"}
-            h={"80px"}
-            bgGradient={"linear(to-r, green.200, pink.500)"}
+            w={"90px"}
+            h={"90px"}
+            bgGradient="linear(to-r, #F213A4, #040BBF)"
             pos={"absolute"}
-            zIndex={-3}
-            filter={"blur(50px)"}
+            opacity={0.5}
+            rounded="10px"
           />
         </Flex>
       </Stack>
     </Container>
   );
-}
+});
+
+export default Hero;

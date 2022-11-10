@@ -9,8 +9,10 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { IoJournalSharp, IoLogoBitcoin, IoWalletSharp } from "react-icons/io5";
+import { IoLogoBitcoin, IoWalletSharp, IoJournalSharp } from "react-icons/io5";
 import securityImage from "@assets/security.png";
+import { forwardRef } from "react";
+
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -29,7 +31,7 @@ const Feature = ({ text, icon, iconBg }) => {
   );
 };
 
-export default function SplitWithImage() {
+const Features = forwardRef((props, ref) => {
   return (
     <Flex
       justify={"center"}
@@ -37,6 +39,7 @@ export default function SplitWithImage() {
       px={{ base: "20px", sm: "30px", lg: "50px" }}
       h={"100vh"}
       align={"center"}
+      ref={ref}
     >
       <SimpleGrid
         columns={{ base: 1, md: 2 }}
@@ -55,12 +58,9 @@ export default function SplitWithImage() {
           >
             비담과 함께라면
           </Text>
-          <Heading>당신의 비밀을 간직 할 수 있습니다.</Heading>
+          <Heading>당신의 비밀을 간직할 수 있습니다.</Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
-            어떤 비밀을 간직 할 수 있는지 알아볼까요?
-          </Text>
-          <Text fontSize={{ base: "24px", sm: "20px", md: "40px", lg: "56px" }}>
-            This is responsive text
+            어떤 비밀을 간직할 수 있는지 알아볼까요?
           </Text>
           <Stack
             spacing={4}
@@ -109,4 +109,6 @@ export default function SplitWithImage() {
       </SimpleGrid>
     </Flex>
   );
-}
+});
+
+export default Features;
